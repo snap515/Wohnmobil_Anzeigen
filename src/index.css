@@ -1,4 +1,6 @@
-@import-normalize; /* bring in normalize.css styles */
+@import-normalize;
+/* bring in normalize.css styles */
+@import '/node_modules/reset-css/reset.css';
 
 body {
   margin: 0;
@@ -12,4 +14,28 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+svg {
+  display: block;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
 }
