@@ -10,7 +10,21 @@ export const apiGetAutos = createAsyncThunk(
   'autos/apiGetAutos',
   async (_, thunkApi) => {
     try {
-      const { data } = await autoAxios.get('/');
+      const { page, limit } = thunkApi.getState().autos;
+      const { data } = await autoAxios.get(`/?page=${page}&limit=${limit}`);
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const apiLoadMoreAutos = createAsyncThunk(
+  'autos/apiLoadMoreAutos',
+  async (_, thunkApi) => {
+    try {
+      const { page, limit } = thunkApi.getState().autos;
+      const { data } = await autoAxios.get(`/?page=${page}&limit=${limit}`);
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
@@ -22,27 +36,45 @@ const initialState = {
   autos: null,
   status: STATUSES.idle,
   error: null,
+  page: 1,
+  limit: 4,
 };
 
 const autosSlice = createSlice({
   name: 'autos',
   initialState,
-  reducers: {}, // If you have reducers, they should be defined here
+  reducers: {
+    incrementPage(state) {
+      state.page += 1;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(apiGetAutos.fulfilled, (state, action) => {
         state.status = STATUSES.fulfilled;
         state.autos = action.payload;
       })
-      .addMatcher(isAnyOf(apiGetAutos.pending), state => {
-        state.status = STATUSES.pending;
-        state.error = null;
+      .addCase(apiLoadMoreAutos.fulfilled, (state, action) => {
+        state.status = STATUSES.fulfilled;
+        state.autos = [...state.autos, ...action.payload];
       })
-      .addMatcher(isAnyOf(apiGetAutos.rejected), (state, action) => {
-        state.status = STATUSES.rejected;
-        state.error = action.payload;
-      }); // Removed the extra closing brace and corrected the syntax
+      .addMatcher(
+        isAnyOf(apiGetAutos.pending, apiLoadMoreAutos.pending),
+        state => {
+          state.status = STATUSES.pending;
+          state.error = null;
+        }
+      )
+      .addMatcher(
+        isAnyOf(apiGetAutos.rejected, apiLoadMoreAutos.rejected),
+        (state, action) => {
+          state.status = STATUSES.rejected;
+          state.error = action.payload;
+        }
+      );
   },
 });
+
+export const { incrementPage } = autosSlice.actions;
 
 export const autosReducer = autosSlice.reducer;
