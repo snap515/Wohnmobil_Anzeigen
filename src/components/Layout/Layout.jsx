@@ -1,12 +1,13 @@
 import { Outlet } from 'react-router-dom';
 import { Navigation } from 'components';
+import { Container } from 'styles/GlobalStyles';
 export const Layout = () => {
   return (
-    <div>
+    <Container>
       <Navigation />
       <main>
         <Outlet />
       </main>
-    </div>
+    </Container>
   );
 };

@@ -2,14 +2,10 @@ export const theme = Object.freeze({
   colors: {
     primaryBlack: '#101828',
     primaryGray: '#475467',
-    primaryRed: '##E44848',
+    primaryRed: '#E44848',
     primaryYellow: '##FFC531',
     secondaryGray: '##F2F4F7',
     thirdGray: '##F7F7F7',
-  },
-
-  fonts: {
-    body: 'Roboto  sans-seri  f',
   },
 
   fontSizes: {},
