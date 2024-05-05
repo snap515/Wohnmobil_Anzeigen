@@ -21,12 +21,13 @@ import { CatalogContainer } from './Catalog.styled';
 const Catalog = () => {
   const [showLoadMoreBtn, setShowLoadMoreBtn] = useState(true);
   const autosAmount = 13;
-
+  const autos = useSelector(selectAutos);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(apiGetAutos());
-  }, [dispatch]);
-  const autos = useSelector(selectAutos);
+    if (!autos) {
+      dispatch(apiGetAutos());
+    }
+  }, []);
   const page = useSelector(selectPage);
   const limit = useSelector(selecLimit);
 
