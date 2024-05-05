@@ -4,3 +4,5 @@ export const STATUSES = {
   success: 'success',
   error: 'error',
 };
+
+export const euroSign = String.fromCharCode(8364);

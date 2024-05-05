@@ -27,6 +27,7 @@ const Catalog = () => {
     if (!autos) {
       dispatch(apiGetAutos());
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const page = useSelector(selectPage);
   const limit = useSelector(selecLimit);

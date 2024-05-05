@@ -25,27 +25,46 @@ import {
   StyledImg,
   ShowMoreBtn,
 } from './CamperItem.styled';
+import { useState } from 'react';
+import { Modal, CamperDetails } from 'components';
+import { euroSign } from 'constants/constants';
 export const CamperItem = ({ camper }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContentId, setModalContentId] = useState(null);
+
+  const handleShowModal = id => {
+    setIsModalOpen(true);
+    setModalContentId(id);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setModalContentId(null);
+    document.body.style.overflow = '';
+  };
+
   const {
     adults,
-    children,
-    consumption,
+    // children,
+    // consumption,
     description,
     details,
     engine,
-    form,
+    // form,
     gallery,
-    height,
-    length,
+    // height,
+    // length,
     location,
     name,
     price,
     rating,
     reviews,
-    tank,
+    // tank,
     transmission,
-    width,
+    // width,
   } = camper;
+
   return (
     <Card>
       <StyledImg src={gallery[0]} alt="" width="290px" />
@@ -53,7 +72,10 @@ export const CamperItem = ({ camper }) => {
         <HeaderContainer>
           <Header>{name}</Header>
           <PriceContainer>
-            <Price>{price}</Price>
+            <Price>
+              {euroSign}
+              {price.toFixed(2)}
+            </Price>
             <AddToFavBtn>
               <Heart />
             </AddToFavBtn>
@@ -97,8 +119,18 @@ export const CamperItem = ({ camper }) => {
             {details.airConditioner && 'AC'}
           </DetailsItem>
         </DetailsList>
-        <ShowMoreBtn type="button">Show more</ShowMoreBtn>
+        <ShowMoreBtn
+          type="button"
+          onClick={() => {
+            handleShowModal(camper._id);
+          }}
+        >
+          Show more
+        </ShowMoreBtn>
       </div>
+      <Modal isModalOpen={isModalOpen} onClose={handleCloseModal}>
+        <CamperDetails contentId={modalContentId} onClose={handleCloseModal} />
+      </Modal>
     </Card>
   );
 };

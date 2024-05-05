@@ -15,3 +15,4 @@ export { Route } from './Route.jsx';
 export { Shower } from './Shower.jsx';
 export { Tv } from './Tv.jsx';
 export { User } from './User.jsx';
+// export { Cross } from './Cross.js';
