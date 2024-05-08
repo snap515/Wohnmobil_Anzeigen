@@ -27,8 +27,7 @@ const Catalog = () => {
     if (!autos) {
       dispatch(apiGetAutos());
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [autos, dispatch]);
   const page = useSelector(selectPage);
   const limit = useSelector(selecLimit);
 
@@ -42,7 +41,7 @@ const Catalog = () => {
     dispatch(incrementPage());
     dispatch(apiLoadMoreAutos());
   };
-
+  console.log(autos);
   return (
     <>
       <CatalogContainer>

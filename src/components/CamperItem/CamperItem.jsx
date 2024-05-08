@@ -64,6 +64,8 @@ export const CamperItem = ({ camper }) => {
     transmission,
     // width,
   } = camper;
+  // const options = Object.entries(camper.details);
+  // console.log(options);
 
   return (
     <Card>

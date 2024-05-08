@@ -1,4 +1,4 @@
-import { Cross } from 'components/Icons/Cross';
+import { Cross } from 'components/Icons';
 
 import { styled } from 'styled-components';
 

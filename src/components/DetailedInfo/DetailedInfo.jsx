@@ -5,31 +5,42 @@ import {
   Navigaton,
   DetailedInfoContainer,
   StyledButton,
+  Line,
+  ButtonContainer,
+  RedLine,
+  ButtonWrapper,
 } from './DetailedInfo.styled';
 export const DetailedInfo = () => {
-  const [activeTab, setActiveTab] = useState('features');
+  const [activeTab, setActiveTab] = useState('');
   const handleTabChange = tab => {
     setActiveTab(tab);
   };
 
   return (
     <Navigaton>
-      <div>
-        <StyledButton
-          type="button"
-          onClick={() => handleTabChange('features')}
-          // active={activeTab === 'features'}
-        >
-          Features
-        </StyledButton>
-        <StyledButton
-          type="button"
-          onClick={() => handleTabChange('reviews')}
-          // active={activeTab === 'reviews'}
-        >
-          Reviews
-        </StyledButton>
-      </div>
+      <ButtonContainer>
+        <ButtonWrapper>
+          <StyledButton
+            type="button"
+            onClick={() => handleTabChange('features')}
+            data-active={activeTab === 'features'}
+          >
+            Features
+          </StyledButton>
+          {activeTab === 'features' && <RedLine />}
+        </ButtonWrapper>
+        <ButtonWrapper>
+          <StyledButton
+            type="button"
+            onClick={() => handleTabChange('reviews')}
+            data-active={activeTab === 'reviews'}
+          >
+            Reviews
+          </StyledButton>
+          {activeTab === 'reviews' && <RedLine />}
+        </ButtonWrapper>
+      </ButtonContainer>
+      <Line />
       <DetailedInfoContainer>
         {activeTab === 'features' && <Features />}
         {activeTab === 'reviews' && <Reviews />}
