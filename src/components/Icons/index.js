@@ -14,5 +14,5 @@ export { RedHeart } from './RedHeart.jsx';
 export { Route } from './Route.jsx';
 export { Shower } from './Shower.jsx';
 export { User } from './User.jsx';
-export { Tv } from './Tv.jsx';
+// export { Tv } from './Tv.jsx';
 export { Cross } from './Cross.jsx';
