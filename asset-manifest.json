@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Wohnmobil_Anzeigen/static/css/main.995e0881.css",
-    "main.js": "/Wohnmobil_Anzeigen/static/js/main.bc30568d.js",
-    "static/js/765.e14f7436.chunk.js": "/Wohnmobil_Anzeigen/static/js/765.e14f7436.chunk.js",
-    "static/js/673.b0b4498f.chunk.js": "/Wohnmobil_Anzeigen/static/js/673.b0b4498f.chunk.js",
-    "static/js/565.f0d37c38.chunk.js": "/Wohnmobil_Anzeigen/static/js/565.f0d37c38.chunk.js",
+    "main.css": "/Wohnmobil_Anzeigen/static/css/main.5950e04b.css",
+    "main.js": "/Wohnmobil_Anzeigen/static/js/main.6965681c.js",
+    "static/js/765.496c87cd.chunk.js": "/Wohnmobil_Anzeigen/static/js/765.496c87cd.chunk.js",
+    "static/js/694.7d5d1582.chunk.js": "/Wohnmobil_Anzeigen/static/js/694.7d5d1582.chunk.js",
+    "static/js/565.3d83ad28.chunk.js": "/Wohnmobil_Anzeigen/static/js/565.3d83ad28.chunk.js",
     "index.html": "/Wohnmobil_Anzeigen/index.html",
-    "main.995e0881.css.map": "/Wohnmobil_Anzeigen/static/css/main.995e0881.css.map",
-    "main.bc30568d.js.map": "/Wohnmobil_Anzeigen/static/js/main.bc30568d.js.map",
-    "765.e14f7436.chunk.js.map": "/Wohnmobil_Anzeigen/static/js/765.e14f7436.chunk.js.map",
-    "673.b0b4498f.chunk.js.map": "/Wohnmobil_Anzeigen/static/js/673.b0b4498f.chunk.js.map",
-    "565.f0d37c38.chunk.js.map": "/Wohnmobil_Anzeigen/static/js/565.f0d37c38.chunk.js.map"
+    "main.5950e04b.css.map": "/Wohnmobil_Anzeigen/static/css/main.5950e04b.css.map",
+    "main.6965681c.js.map": "/Wohnmobil_Anzeigen/static/js/main.6965681c.js.map",
+    "765.496c87cd.chunk.js.map": "/Wohnmobil_Anzeigen/static/js/765.496c87cd.chunk.js.map",
+    "694.7d5d1582.chunk.js.map": "/Wohnmobil_Anzeigen/static/js/694.7d5d1582.chunk.js.map",
+    "565.3d83ad28.chunk.js.map": "/Wohnmobil_Anzeigen/static/js/565.3d83ad28.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.995e0881.css",
-    "static/js/main.bc30568d.js"
+    "static/css/main.5950e04b.css",
+    "static/js/main.6965681c.js"
   ]
 }
