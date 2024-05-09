@@ -16,3 +16,4 @@ export { Shower } from './Shower.jsx';
 export { User } from './User.jsx';
 // export { Tv } from './Tv.jsx';
 export { Cross } from './Cross.jsx';
+export { Star } from './Star.jsx';

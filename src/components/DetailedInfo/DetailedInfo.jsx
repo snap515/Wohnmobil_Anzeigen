@@ -10,7 +10,7 @@ import {
   RedLine,
   ButtonWrapper,
 } from './DetailedInfo.styled';
-export const DetailedInfo = () => {
+export const DetailedInfo = ({ camper }) => {
   const [activeTab, setActiveTab] = useState('');
   const handleTabChange = tab => {
     setActiveTab(tab);
@@ -42,8 +42,8 @@ export const DetailedInfo = () => {
       </ButtonContainer>
       <Line />
       <DetailedInfoContainer>
-        {activeTab === 'features' && <Features />}
-        {activeTab === 'reviews' && <Reviews />}
+        {activeTab === 'features' && <Features camper={camper} />}
+        {activeTab === 'reviews' && <Reviews reviews={camper.reviews} />}
         <BookingForm />
       </DetailedInfoContainer>
     </Navigaton>

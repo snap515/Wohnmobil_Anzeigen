@@ -52,7 +52,7 @@ export const CamperDetails = ({ contentId, onClose }) => {
           })}
         </ImgContainer>
         <DescriptionText>{modalContent.description}</DescriptionText>
-        <DetailedInfo />
+        <DetailedInfo camper={modalContent} />
       </ScrollableContainer>
     </ModalContent>
   );
