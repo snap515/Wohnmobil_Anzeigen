@@ -46,23 +46,23 @@ export const CamperItem = ({ camper }) => {
 
   const {
     adults,
-    children,
-    consumption,
+    // children,
+    // consumption,
     description,
     details,
     engine,
-    form,
+    // form,
     gallery,
-    height,
-    length,
+    // height,
+    // length,
     location,
     name,
     price,
     rating,
     reviews,
-    tank,
+    // tank,
     transmission,
-    width,
+    // width,
   } = camper;
   // const options = Object.entries(camper.details);
   // console.log(options);
